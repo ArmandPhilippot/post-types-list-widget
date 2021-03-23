@@ -1,0 +1,39 @@
+.ptlwidget {
+	&__legend {
+		font-weight: 600;
+	}
+
+	&__label {
+		&--capitalize {
+			text-transform: capitalize;
+		}
+	}
+
+	&__fieldset {
+		input[type="radio"] ~ input[type="radio"] {
+			margin-left: 2em;
+		}
+
+		input[type="radio"][value="limited"] {
+			~ .ptlwidget__conditionally-hidden {
+				margin-top: 0.5em;
+			}
+
+			&:checked {
+				~ .ptlwidget__conditionally-hidden {
+					display: block;
+				}
+			}
+
+			&:not(:checked) {
+				~ .ptlwidget__conditionally-hidden {
+					display: none;
+				}
+			}
+		}
+
+		input[type="number"] {
+			width: 10ch;
+		}
+	}
+}

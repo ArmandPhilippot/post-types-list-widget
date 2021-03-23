@@ -1,0 +1,109 @@
+# Copyright (C) 2021 PTL-Widget
+# This file is distributed under the same license as the PTL-Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: PTL-Widget\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Armand Philippot <contact@armandphilippot.com>\n"
+"Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/armandphilippot/post-types-list-widget/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: class-ptl-widget.php:60
+msgid "A widget to display a list of posts by post types."
+msgstr ""
+
+#: class-ptl-widget.php:65, public/partials/ptl-widget-public-display.php:17
+msgid "Post Types"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:36
+msgid "Title:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:50
+msgid "Ignore sticky posts"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:54
+msgid "Choose post types:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:77
+msgid "How many posts do you want to display:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:81
+msgid "Display all posts"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:85
+msgid "Fix a limit"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:88
+msgid "Number of posts to display:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:97
+msgid "Choose a sorting method:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:100
+msgid "Order:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:103
+msgid "Descending"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:104
+msgid "Ascending"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:107
+msgid "Order by:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:110, admin/partials/ptl-widget-admin-display.php:156
+msgid "Publication date"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:111, admin/partials/ptl-widget-admin-display.php:166
+msgid "Update date"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:112
+msgid "Title"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:117
+msgid "Choose the information to display:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:126
+msgid "Categories"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:136
+msgid "Tags"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:146
+msgid "Author"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:176
+msgid "Comments number"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:186
+msgid "Excerpt"
+msgstr ""

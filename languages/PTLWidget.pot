@@ -17,11 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: class-ptl-widget.php:60
-msgid "A widget to display a list of posts by post types."
+msgid "Display a list of posts by post types with custom options."
 msgstr ""
 
 #: class-ptl-widget.php:65
-msgid "Post Types"
+msgid "Post Types List"
 msgstr ""
 
 #: admin/partials/ptl-widget-admin-display.php:39

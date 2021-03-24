@@ -13,9 +13,9 @@
  * @since     0.0.1
  *
  * @wordpress-plugin
- * Plugin Name:       Post Types
+ * Plugin Name:       Post Types List
  * Plugin URI:        https://github.com/armandphilippot/post-types-list-widget
- * Description:       A widget to display a list of posts by post types.
+ * Description:       Display a list of posts by post types with custom options.
  * Version:           0.0.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
@@ -57,12 +57,12 @@ class PTL_Widget extends \WP_Widget {
 	public function __construct() {
 		$widget_options = array(
 			'classname'   => 'ptlwidget',
-			'description' => __( 'A widget to display a list of posts by post types.', 'PTLWidget' ),
+			'description' => __( 'Display a list of posts by post types with custom options.', 'PTLWidget' ),
 		);
 
 		parent::__construct(
 			'ptlwidget',
-			__( 'Post Types', 'PTLWidget' ),
+			__( 'Post Types List', 'PTLWidget' ),
 			$widget_options
 		);
 

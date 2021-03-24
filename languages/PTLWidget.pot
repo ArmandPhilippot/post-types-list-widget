@@ -20,7 +20,7 @@ msgstr ""
 msgid "A widget to display a list of posts by post types."
 msgstr ""
 
-#: class-ptl-widget.php:65, public/partials/ptl-widget-public-display.php:17
+#: class-ptl-widget.php:65
 msgid "Post Types"
 msgstr ""
 

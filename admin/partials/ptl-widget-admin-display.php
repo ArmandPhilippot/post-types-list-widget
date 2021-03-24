@@ -100,8 +100,8 @@ $ptlwidget_post_types_list  = get_post_types( array( 'public' => true ) );
 			<?php esc_html_e( 'Order:', 'PTLWidget' ); ?>
 		</label>
 		<select name="<?php echo esc_attr( $this->get_field_name( 'posts_order' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'posts_order' ) ); ?>">
-			<option value="desc" <?php selected( $ptlwidget_posts_order, 'desc' ); ?>><?php esc_html_e( 'Descending', 'PTLWidget' ); ?></option>
-			<option value="asc" <?php selected( $ptlwidget_posts_order, 'asc' ); ?>><?php esc_html_e( 'Ascending', 'PTLWidget' ); ?></option>
+			<option value="DESC" <?php selected( $ptlwidget_posts_order, 'DESC' ); ?>><?php esc_html_e( 'Descending', 'PTLWidget' ); ?></option>
+			<option value="ASC" <?php selected( $ptlwidget_posts_order, 'ASC' ); ?>><?php esc_html_e( 'Ascending', 'PTLWidget' ); ?></option>
 		</select>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'posts_order_by' ) ); ?>">
 			<?php esc_html_e( 'Order by:', 'PTLWidget' ); ?>

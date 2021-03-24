@@ -168,6 +168,34 @@ class PTL_Widget extends \WP_Widget {
 	}
 
 	/**
+	 * Define the value to use by the order by argument in WP_Query.
+	 *
+	 * @see https://developer.wordpress.org/reference/classes/wp_query/#order-orderby-parameters
+	 * @since 0.0.1
+	 *
+	 * @param string $value A value to compare.
+	 * @return string The correct value to use in WP_Query args.
+	 */
+	public function getOrderByValue( string $value ): string {
+		switch ( $value ) {
+			case 'update-date':
+				return 'modified';
+			case 'title':
+				return 'title';
+			case 'author':
+				return 'author';
+			case 'comment':
+				return 'comment_count';
+			case 'type':
+				return 'type';
+			case 'random':
+				return 'rand';
+			default:
+				return 'date';
+		}
+	}
+
+	/**
 	 * Outputs the content for the current PTL_Widget widget instance.
 	 *
 	 * @since 0.0.1
@@ -211,17 +239,20 @@ class PTL_Widget extends \WP_Widget {
 			$instance['post_types'][ $ptlwidget_post_type_name ] = ( ! empty( $new_instance['post_types'][ $ptlwidget_post_type_name ] ) ) ? 1 : 0;
 		}
 
-		$instance['posts_limit']      = ( ! empty( $new_instance['posts_limit'] ) ) ? wp_strip_all_tags( $new_instance['posts_limit'] ) : '';
-		$instance['posts_number']     = ( ! empty( $new_instance['posts_number'] ) ) ? wp_strip_all_tags( $new_instance['posts_number'] ) : '';
-		$instance['posts_order']      = ( ! empty( $new_instance['posts_order'] ) ) ? wp_strip_all_tags( $new_instance['posts_order'] ) : '';
-		$instance['posts_order_by']   = ( ! empty( $new_instance['posts_order_by'] ) ) ? wp_strip_all_tags( $new_instance['posts_order_by'] ) : '';
-		$instance['categories']       = ! empty( $new_instance['categories'] ) ? 1 : 0;
-		$instance['tags']             = ! empty( $new_instance['tags'] ) ? 1 : 0;
-		$instance['author']           = ! empty( $new_instance['author'] ) ? 1 : 0;
-		$instance['publication_date'] = ! empty( $new_instance['publication_date'] ) ? 1 : 0;
-		$instance['update_date']      = ! empty( $new_instance['update_date'] ) ? 1 : 0;
-		$instance['comments_number']  = ! empty( $new_instance['comments_number'] ) ? 1 : 0;
-		$instance['excerpt']          = ! empty( $new_instance['excerpt'] ) ? 1 : 0;
+		$instance['posts_limit']                  = ( ! empty( $new_instance['posts_limit'] ) ) ? wp_strip_all_tags( $new_instance['posts_limit'] ) : 'all';
+		$instance['posts_number']                 = ( ! empty( $new_instance['posts_number'] ) ) ? wp_strip_all_tags( $new_instance['posts_number'] ) : '';
+		$instance['posts_order']                  = ( ! empty( $new_instance['posts_order'] ) ) ? wp_strip_all_tags( $new_instance['posts_order'] ) : '';
+		$instance['posts_order_by']               = ( ! empty( $new_instance['posts_order_by'] ) ) ? wp_strip_all_tags( $new_instance['posts_order_by'] ) : '';
+		$instance['complementary_sorting']        = ( ! empty( $new_instance['complementary_sorting'] ) ) ? wp_strip_all_tags( $new_instance['complementary_sorting'] ) : 'deactivated';
+		$instance['posts_order_complementary']    = ( ! empty( $new_instance['posts_order_complementary'] ) ) ? wp_strip_all_tags( $new_instance['posts_order_complementary'] ) : '';
+		$instance['posts_order_by_complementary'] = ( ! empty( $new_instance['posts_order_by_complementary'] ) ) ? wp_strip_all_tags( $new_instance['posts_order_by_complementary'] ) : '';
+		$instance['categories']                   = ! empty( $new_instance['categories'] ) ? 1 : 0;
+		$instance['tags']                         = ! empty( $new_instance['tags'] ) ? 1 : 0;
+		$instance['author']                       = ! empty( $new_instance['author'] ) ? 1 : 0;
+		$instance['publication_date']             = ! empty( $new_instance['publication_date'] ) ? 1 : 0;
+		$instance['update_date']                  = ! empty( $new_instance['update_date'] ) ? 1 : 0;
+		$instance['comments_number']              = ! empty( $new_instance['comments_number'] ) ? 1 : 0;
+		$instance['excerpt']                      = ! empty( $new_instance['excerpt'] ) ? 1 : 0;
 
 		return $instance;
 	}

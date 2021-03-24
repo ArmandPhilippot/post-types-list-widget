@@ -14,7 +14,8 @@
 			margin-left: 2em;
 		}
 
-		input[type="radio"][value="limited"] {
+		input[type="radio"][value="limited"],
+		input[type="radio"][value="activated"] {
 			~ .ptlwidget__conditionally-hidden {
 				margin-top: 0.5em;
 			}

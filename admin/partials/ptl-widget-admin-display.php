@@ -14,21 +14,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$ptlwidget_title            = ! empty( $instance['title'] ) ? $instance['title'] : '';
-$ptlwidget_sticky_posts     = ! empty( $instance['sticky_posts'] ) ? $instance['sticky_posts'] : false;
-$ptlwidget_post_types       = ! empty( $instance['post_types'] ) ? $instance['post_types'] : array();
-$ptlwidget_posts_limit      = ! empty( $instance['posts_limit'] ) ? $instance['posts_limit'] : '';
-$ptlwidget_posts_number     = ! empty( $instance['posts_number'] ) ? $instance['posts_number'] : '';
-$ptlwidget_posts_order      = ! empty( $instance['posts_order'] ) ? $instance['posts_order'] : '';
-$ptlwidget_posts_order_by   = ! empty( $instance['posts_order_by'] ) ? $instance['posts_order_by'] : '';
-$ptlwidget_categories       = ! empty( $instance['categories'] ) ? $instance['categories'] : false;
-$ptlwidget_tags             = ! empty( $instance['tags'] ) ? $instance['tags'] : false;
-$ptlwidget_author           = ! empty( $instance['author'] ) ? $instance['author'] : false;
-$ptlwidget_publication_date = ! empty( $instance['publication_date'] ) ? $instance['publication_date'] : false;
-$ptlwidget_update_date      = ! empty( $instance['update_date'] ) ? $instance['update_date'] : false;
-$ptlwidget_comments_number  = ! empty( $instance['comments_number'] ) ? $instance['comments_number'] : false;
-$ptlwidget_excerpt          = ! empty( $instance['excerpt'] ) ? $instance['excerpt'] : false;
-$ptlwidget_post_types_list  = get_post_types( array( 'public' => true ) );
+$ptlwidget_title                        = ! empty( $instance['title'] ) ? $instance['title'] : '';
+$ptlwidget_sticky_posts                 = ! empty( $instance['sticky_posts'] ) ? $instance['sticky_posts'] : false;
+$ptlwidget_post_types                   = ! empty( $instance['post_types'] ) ? $instance['post_types'] : array();
+$ptlwidget_posts_limit                  = ! empty( $instance['posts_limit'] ) ? $instance['posts_limit'] : 'all';
+$ptlwidget_posts_number                 = ! empty( $instance['posts_number'] ) ? $instance['posts_number'] : '';
+$ptlwidget_posts_order                  = ! empty( $instance['posts_order'] ) ? $instance['posts_order'] : '';
+$ptlwidget_posts_order_by               = ! empty( $instance['posts_order_by'] ) ? $instance['posts_order_by'] : '';
+$ptlwidget_complementary_sorting        = ! empty( $instance['complementary_sorting'] ) ? $instance['complementary_sorting'] : 'deactivated';
+$ptlwidget_posts_order_complementary    = ! empty( $instance['posts_order_complementary'] ) ? $instance['posts_order_complementary'] : '';
+$ptlwidget_posts_order_by_complementary = ! empty( $instance['posts_order_by_complementary'] ) ? $instance['posts_order_by_complementary'] : '';
+$ptlwidget_categories                   = ! empty( $instance['categories'] ) ? $instance['categories'] : false;
+$ptlwidget_tags                         = ! empty( $instance['tags'] ) ? $instance['tags'] : false;
+$ptlwidget_author                       = ! empty( $instance['author'] ) ? $instance['author'] : false;
+$ptlwidget_publication_date             = ! empty( $instance['publication_date'] ) ? $instance['publication_date'] : false;
+$ptlwidget_update_date                  = ! empty( $instance['update_date'] ) ? $instance['update_date'] : false;
+$ptlwidget_comments_number              = ! empty( $instance['comments_number'] ) ? $instance['comments_number'] : false;
+$ptlwidget_excerpt                      = ! empty( $instance['excerpt'] ) ? $instance['excerpt'] : false;
+$ptlwidget_post_types_list              = get_post_types( array( 'public' => true ) );
 ?>
 <p>
 	<label
@@ -96,13 +99,6 @@ $ptlwidget_post_types_list  = get_post_types( array( 'public' => true ) );
 <fieldset class="ptlwidget__fieldset">
 	<legend class="ptlwidget__legend"><?php esc_html_e( 'Choose a sorting method:', 'PTLWidget' ); ?></legend>
 	<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'posts_order' ) ); ?>">
-			<?php esc_html_e( 'Order:', 'PTLWidget' ); ?>
-		</label>
-		<select name="<?php echo esc_attr( $this->get_field_name( 'posts_order' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'posts_order' ) ); ?>">
-			<option value="DESC" <?php selected( $ptlwidget_posts_order, 'DESC' ); ?>><?php esc_html_e( 'Descending', 'PTLWidget' ); ?></option>
-			<option value="ASC" <?php selected( $ptlwidget_posts_order, 'ASC' ); ?>><?php esc_html_e( 'Ascending', 'PTLWidget' ); ?></option>
-		</select>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'posts_order_by' ) ); ?>">
 			<?php esc_html_e( 'Order by:', 'PTLWidget' ); ?>
 		</label>
@@ -110,7 +106,54 @@ $ptlwidget_post_types_list  = get_post_types( array( 'public' => true ) );
 			<option value="publication-date" <?php selected( $ptlwidget_posts_order_by, 'publication-date' ); ?>><?php esc_html_e( 'Publication date', 'PTLWidget' ); ?></option>
 			<option value="update-date" <?php selected( $ptlwidget_posts_order_by, 'update-date' ); ?>><?php esc_html_e( 'Update date', 'PTLWidget' ); ?></option>
 			<option value="title" <?php selected( $ptlwidget_posts_order_by, 'title' ); ?>><?php esc_html_e( 'Title', 'PTLWidget' ); ?></option>
+			<option value="author" <?php selected( $ptlwidget_posts_order_by, 'author' ); ?>><?php esc_html_e( 'Author', 'PTLWidget' ); ?></option>
+			<option value="comment" <?php selected( $ptlwidget_posts_order_by, 'comment' ); ?>><?php esc_html_e( 'Comment count', 'PTLWidget' ); ?></option>
+			<option value="type" <?php selected( $ptlwidget_posts_order_by, 'type' ); ?>><?php esc_html_e( 'Post type', 'PTLWidget' ); ?></option>
+			<option value="random" <?php selected( $ptlwidget_posts_order_by, 'random' ); ?>><?php esc_html_e( 'Random', 'PTLWidget' ); ?></option>
 		</select>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'posts_order' ) ); ?>">
+			<?php esc_html_e( 'Order:', 'PTLWidget' ); ?>
+		</label>
+		<select name="<?php echo esc_attr( $this->get_field_name( 'posts_order' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'posts_order' ) ); ?>">
+			<option value="DESC" <?php selected( $ptlwidget_posts_order, 'DESC' ); ?>><?php esc_html_e( 'Descending', 'PTLWidget' ); ?></option>
+			<option value="ASC" <?php selected( $ptlwidget_posts_order, 'ASC' ); ?>><?php esc_html_e( 'Ascending', 'PTLWidget' ); ?></option>
+		</select>
+	</p>
+	<p>
+		<small><?php esc_html_e( 'If you choose "Random", the order option has probably no effect and the second sorting method will not be applied.', 'PTLWidget' ); ?></small>
+	</p>
+</fieldset>
+<fieldset class="ptlwidget__fieldset">
+	<legend class="ptlwidget__legend"><?php esc_html_e( 'Do you want a complementary sorting method?', 'PTLWidget' ); ?></legend>
+	<p>
+		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( 'complementary_sorting' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'complementary_sorting_deactivated' ) ); ?>" value="deactivated" <?php checked( $ptlwidget_complementary_sorting, 'deactivated' ); ?>>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'complementary_sorting_deactivated' ) ); ?>">
+			<?php echo esc_html__( 'No', 'PTLWidget' ); ?>
+		</label>
+		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( 'complementary_sorting' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'complementary_sorting_activated' ) ); ?>" value="activated" <?php checked( $ptlwidget_complementary_sorting, 'activated' ); ?>>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'complementary_sorting_activated' ) ); ?>">
+			<?php echo esc_html__( 'Yes', 'PTLWidget' ); ?>
+		</label>
+		<span class="ptlwidget__conditionally-hidden">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'posts_order_by_complementary' ) ); ?>">
+				<?php esc_html_e( 'Order by:', 'PTLWidget' ); ?>
+			</label>
+			<select name="<?php echo esc_attr( $this->get_field_name( 'posts_order_by_complementary' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'posts_order_by_complementary' ) ); ?>">
+				<option value="publication-date" <?php selected( $ptlwidget_posts_order_by_complementary, 'publication-date' ); ?>><?php esc_html_e( 'Publication date', 'PTLWidget' ); ?></option>
+				<option value="update-date" <?php selected( $ptlwidget_posts_order_by_complementary, 'update-date' ); ?>><?php esc_html_e( 'Update date', 'PTLWidget' ); ?></option>
+				<option value="title" <?php selected( $ptlwidget_posts_order_by_complementary, 'title' ); ?>><?php esc_html_e( 'Title', 'PTLWidget' ); ?></option>
+				<option value="author" <?php selected( $ptlwidget_posts_order_by_complementary, 'author' ); ?>><?php esc_html_e( 'Author', 'PTLWidget' ); ?></option>
+				<option value="comment" <?php selected( $ptlwidget_posts_order_by_complementary, 'comment' ); ?>><?php esc_html_e( 'Comment count', 'PTLWidget' ); ?></option>
+				<option value="type" <?php selected( $ptlwidget_posts_order_by_complementary, 'type' ); ?>><?php esc_html_e( 'Post type', 'PTLWidget' ); ?></option>
+			</select>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'posts_order_complementary' ) ); ?>">
+				<?php esc_html_e( 'Order:', 'PTLWidget' ); ?>
+			</label>
+			<select name="<?php echo esc_attr( $this->get_field_name( 'posts_order_complementary' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'posts_order_complementary' ) ); ?>">
+				<option value="DESC" <?php selected( $ptlwidget_posts_order_complementary, 'DESC' ); ?>><?php esc_html_e( 'Descending', 'PTLWidget' ); ?></option>
+				<option value="ASC" <?php selected( $ptlwidget_posts_order_complementary, 'ASC' ); ?>><?php esc_html_e( 'Ascending', 'PTLWidget' ); ?></option>
+			</select>
+		</span>
 	</p>
 </fieldset>
 <fieldset class="ptlwidget__fieldset">

@@ -17,19 +17,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 $ptlwidget_title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 $ptlwidget_title = apply_filters( 'widget_title', $ptlwidget_title, $instance, $this->id_base );
 
-$ptlwidget_sticky_posts     = ! empty( $instance['sticky_posts'] ) ? '1' : '0';
-$ptlwidget_post_types       = ( ! empty( $instance['post_types'] ) ) ? $instance['post_types'] : array( 'post' => 1 );
-$ptlwidget_posts_limit      = ( ! empty( $instance['posts_limit'] ) ) ? wp_strip_all_tags( $instance['posts_limit'] ) : '';
-$ptlwidget_posts_number     = ( ! empty( $instance['posts_number'] ) ) ? intval( wp_strip_all_tags( $instance['posts_number'] ) ) : '';
-$ptlwidget_posts_order      = ( ! empty( $instance['posts_order'] ) ) ? wp_strip_all_tags( $instance['posts_order'] ) : '';
-$ptlwidget_posts_order_by   = ( ! empty( $instance['posts_order_by'] ) ) ? wp_strip_all_tags( $instance['posts_order_by'] ) : '';
-$ptlwidget_categories       = ! empty( $instance['categories'] ) ? '1' : '0';
-$ptlwidget_tags             = ! empty( $instance['tags'] ) ? '1' : '0';
-$ptlwidget_author           = ! empty( $instance['author'] ) ? '1' : '0';
-$ptlwidget_publication_date = ! empty( $instance['publication_date'] ) ? '1' : '0';
-$ptlwidget_update_date      = ! empty( $instance['update_date'] ) ? '1' : '0';
-$ptlwidget_comments_number  = ! empty( $instance['comments_number'] ) ? '1' : '0';
-$ptlwidget_excerpt          = ! empty( $instance['excerpt'] ) ? '1' : '0';
+$ptlwidget_sticky_posts                 = ! empty( $instance['sticky_posts'] ) ? '1' : '0';
+$ptlwidget_post_types                   = ( ! empty( $instance['post_types'] ) ) ? $instance['post_types'] : array( 'post' => 1 );
+$ptlwidget_posts_limit                  = ( ! empty( $instance['posts_limit'] ) ) ? wp_strip_all_tags( $instance['posts_limit'] ) : 'all';
+$ptlwidget_posts_number                 = ( ! empty( $instance['posts_number'] ) ) ? intval( wp_strip_all_tags( $instance['posts_number'] ) ) : '';
+$ptlwidget_posts_order                  = ( ! empty( $instance['posts_order'] ) ) ? wp_strip_all_tags( $instance['posts_order'] ) : '';
+$ptlwidget_posts_order_by               = ( ! empty( $instance['posts_order_by'] ) ) ? wp_strip_all_tags( $instance['posts_order_by'] ) : '';
+$ptlwidget_complementary_sorting        = ( ! empty( $instance['complementary_sorting'] ) ) ? wp_strip_all_tags( $instance['complementary_sorting'] ) : 'deactivated';
+$ptlwidget_posts_order_complementary    = ( ! empty( $instance['posts_order_complementary'] ) ) ? wp_strip_all_tags( $instance['posts_order_complementary'] ) : '';
+$ptlwidget_posts_order_by_complementary = ( ! empty( $instance['posts_order_by_complementary'] ) ) ? wp_strip_all_tags( $instance['posts_order_by_complementary'] ) : '';
+$ptlwidget_categories                   = ! empty( $instance['categories'] ) ? '1' : '0';
+$ptlwidget_tags                         = ! empty( $instance['tags'] ) ? '1' : '0';
+$ptlwidget_author                       = ! empty( $instance['author'] ) ? '1' : '0';
+$ptlwidget_publication_date             = ! empty( $instance['publication_date'] ) ? '1' : '0';
+$ptlwidget_update_date                  = ! empty( $instance['update_date'] ) ? '1' : '0';
+$ptlwidget_comments_number              = ! empty( $instance['comments_number'] ) ? '1' : '0';
+$ptlwidget_excerpt                      = ! empty( $instance['excerpt'] ) ? '1' : '0';
 
 $ptlwidget_query_args = array(
 	'query_label'      => 'ptlwidget_query',
@@ -50,25 +53,20 @@ if ( $ptlwidget_sticky_posts ) {
 	$ptlwidget_query_args += array( 'ignore_sticky_posts' => true );
 }
 
-if ( 'ASC' === $ptlwidget_posts_order || 'DESC' === $ptlwidget_posts_order ) {
-	$ptlwidget_query_args += array( 'order' => $ptlwidget_posts_order );
+$ptlwidget_posts_order_by_array = array();
+$ptlwidget_posts_orderby_arg    = $this->getOrderByValue( $ptlwidget_posts_order_by );
+
+if ( $ptlwidget_posts_orderby_arg && ( 'ASC' === $ptlwidget_posts_order || 'DESC' === $ptlwidget_posts_order ) ) {
+	$ptlwidget_posts_order_by_array += array( $ptlwidget_posts_orderby_arg => $ptlwidget_posts_order );
 }
 
-switch ( $ptlwidget_posts_order_by ) {
-	case 'update-date':
-		$ptlwidget_posts_orderby_arg = 'modified';
-		break;
-	case 'title':
-		$ptlwidget_posts_orderby_arg = 'title';
-		break;
-	default:
-		$ptlwidget_posts_orderby_arg = 'date';
-		break;
+if ( 'activated' === $ptlwidget_complementary_sorting ) {
+	$ptlwidget_posts_orderby_complementary_arg = $this->getOrderByValue( $ptlwidget_posts_order_by_complementary );
+	$ptlwidget_posts_order_by_array           += array( $ptlwidget_posts_orderby_complementary_arg => $ptlwidget_posts_order_complementary );
 }
 
-if ( $ptlwidget_posts_orderby_arg ) {
-	$ptlwidget_query_args += array( 'orderby' => $ptlwidget_posts_orderby_arg );
-}
+$ptlwidget_query_args += array( 'order' => $ptlwidget_posts_order_array );
+$ptlwidget_query_args += array( 'orderby' => $ptlwidget_posts_order_by_array );
 
 if ( 'limited' === $ptlwidget_posts_limit && is_int( $ptlwidget_posts_number ) ) {
 	$ptlwidget_query_args += array( 'posts_per_page' => $ptlwidget_posts_number );

@@ -24,114 +24,142 @@ msgstr ""
 msgid "Post Types"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:36
+#: admin/partials/ptl-widget-admin-display.php:39
 msgid "Title:"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:50
+#: admin/partials/ptl-widget-admin-display.php:53
 msgid "Ignore sticky posts"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:54
+#: admin/partials/ptl-widget-admin-display.php:57
 msgid "Choose post types:"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:77
+#: admin/partials/ptl-widget-admin-display.php:80
 msgid "How many posts do you want to display:"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:81
+#: admin/partials/ptl-widget-admin-display.php:84
 msgid "Display all posts"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:85
+#: admin/partials/ptl-widget-admin-display.php:88
 msgid "Fix a limit"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:88
+#: admin/partials/ptl-widget-admin-display.php:91
 msgid "Number of posts to display:"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:97
+#: admin/partials/ptl-widget-admin-display.php:100
 msgid "Choose a sorting method:"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:100
-msgid "Order:"
-msgstr ""
-
-#: admin/partials/ptl-widget-admin-display.php:103
-msgid "Descending"
-msgstr ""
-
-#: admin/partials/ptl-widget-admin-display.php:104
-msgid "Ascending"
-msgstr ""
-
-#: admin/partials/ptl-widget-admin-display.php:107
+#: admin/partials/ptl-widget-admin-display.php:103, admin/partials/ptl-widget-admin-display.php:139
 msgid "Order by:"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:110, admin/partials/ptl-widget-admin-display.php:156
+#: admin/partials/ptl-widget-admin-display.php:106, admin/partials/ptl-widget-admin-display.php:142, admin/partials/ptl-widget-admin-display.php:199
 msgid "Publication date"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:111, admin/partials/ptl-widget-admin-display.php:166
+#: admin/partials/ptl-widget-admin-display.php:107, admin/partials/ptl-widget-admin-display.php:143, admin/partials/ptl-widget-admin-display.php:209
 msgid "Update date"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:112
+#: admin/partials/ptl-widget-admin-display.php:108, admin/partials/ptl-widget-admin-display.php:144
 msgid "Title"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:117
-msgid "Choose the information to display:"
-msgstr ""
-
-#: admin/partials/ptl-widget-admin-display.php:126
-msgid "Categories"
-msgstr ""
-
-#: admin/partials/ptl-widget-admin-display.php:136
-msgid "Tags"
-msgstr ""
-
-#: admin/partials/ptl-widget-admin-display.php:146
+#: admin/partials/ptl-widget-admin-display.php:109, admin/partials/ptl-widget-admin-display.php:145, admin/partials/ptl-widget-admin-display.php:189
 msgid "Author"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:176
+#: admin/partials/ptl-widget-admin-display.php:110, admin/partials/ptl-widget-admin-display.php:146
+msgid "Comment count"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:111, admin/partials/ptl-widget-admin-display.php:147
+msgid "Post type"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:112
+msgid "Random"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:115, admin/partials/ptl-widget-admin-display.php:150
+msgid "Order:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:118, admin/partials/ptl-widget-admin-display.php:153
+msgid "Descending"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:119, admin/partials/ptl-widget-admin-display.php:154
+msgid "Ascending"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:123
+msgid "If you choose \"Random\", the order option has probably no effect and the second sorting method will not be applied."
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:127
+msgid "Do you want a complementary sorting method?"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:131
+msgid "No"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:135
+msgid "Yes"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:160
+msgid "Choose the information to display:"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:169
+msgid "Categories"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:179
+msgid "Tags"
+msgstr ""
+
+#: admin/partials/ptl-widget-admin-display.php:219
 msgid "Comments number"
 msgstr ""
 
-#: admin/partials/ptl-widget-admin-display.php:186
+#: admin/partials/ptl-widget-admin-display.php:229
 msgid "Excerpt"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:112
+#: public/partials/ptl-widget-public-display.php:110
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: public/partials/ptl-widget-public-display.php:136
+#: public/partials/ptl-widget-public-display.php:134
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: public/partials/ptl-widget-public-display.php:156
+#: public/partials/ptl-widget-public-display.php:154
 msgid "Author:"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:168
+#: public/partials/ptl-widget-public-display.php:166
 msgid "Published on"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:180
+#: public/partials/ptl-widget-public-display.php:178
 msgid "Updated on"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:192
+#: public/partials/ptl-widget-public-display.php:190
 msgid "Comments:"
 msgstr ""

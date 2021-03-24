@@ -9,14 +9,17 @@
 //=============================================================================
 @import "base/widget_info";
 
-.apwidget-lup {
-	&__list {
-		list-style: none;
+.ptl {
+	&__item {
+		margin-bottom: 0.8em;
 	}
 
-	&__item {
-		&::before {
-			display: none;
-		}
+	&__footer {
+		font-size: 0.8em;
+	}
+
+	&__term,
+	&__description {
+		display: inline-block;
 	}
 }

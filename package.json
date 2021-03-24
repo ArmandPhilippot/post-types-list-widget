@@ -1,6 +1,6 @@
 {
 	"name": "ptl-widget",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "A widget to display a list of posts by post types.",
 	"author": "Armand Philippot",
 	"license": "GPL-2.0-or-later",

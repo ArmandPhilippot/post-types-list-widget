@@ -107,3 +107,31 @@ msgstr ""
 #: admin/partials/ptl-widget-admin-display.php:186
 msgid "Excerpt"
 msgstr ""
+
+#: public/partials/ptl-widget-public-display.php:112
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/partials/ptl-widget-public-display.php:136
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/partials/ptl-widget-public-display.php:156
+msgid "Author:"
+msgstr ""
+
+#: public/partials/ptl-widget-public-display.php:168
+msgid "Published on"
+msgstr ""
+
+#: public/partials/ptl-widget-public-display.php:180
+msgid "Updated on"
+msgstr ""
+
+#: public/partials/ptl-widget-public-display.php:192
+msgid "Comments:"
+msgstr ""

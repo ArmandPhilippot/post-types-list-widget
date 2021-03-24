@@ -59,7 +59,7 @@ switch ( $ptlwidget_posts_order_by ) {
 		$ptlwidget_posts_orderby_arg = 'modified';
 		break;
 	case 'title':
-		$ptlwidget_posts_orderby_arg = 'name';
+		$ptlwidget_posts_orderby_arg = 'title';
 		break;
 	default:
 		$ptlwidget_posts_orderby_arg = 'date';
@@ -97,6 +97,120 @@ if ( $ptlwidget_posts_query->have_posts() ) {
 					<header class="ptl__header">
 						<a href="<?php the_permalink(); ?>" class="ptl__title"><?php the_title(); ?></a>
 					</header>
+					<?php if ( $ptlwidget_categories || $ptlwidget_tags || $ptlwidget_author || $ptlwidget_publication_date || $ptlwidget_update_date || $ptlwidget_comments_number ) { ?>
+						<footer class="ptl__footer">
+							<dl class="ptl__list">
+								<?php
+								if ( $ptlwidget_categories && has_category() ) {
+									$ptlwidget_post_categories = get_the_category();
+									?>
+									<div class="ptl__group ptl__categories">
+										<dt class="ptl__term">
+										<?php
+										printf(
+											esc_html(
+												_n(
+													'Category:',
+													'Categories:',
+													count( $ptlwidget_post_categories ),
+													'PTLWidget'
+												)
+											)
+										);
+										?>
+										</dt>
+										<dd class="ptl__description">
+											<?php the_category( ', ' ); ?>
+										</dd>
+									</div>
+									<?php
+								}
+								if ( $ptlwidget_tags && has_tag() ) {
+									$ptlwidget_post_tags = get_the_tags();
+									?>
+									<div class="ptl__group ptl__tags">
+										<dt class="ptl__term">
+										<?php
+										printf(
+											esc_html(
+												_n(
+													'Tag:',
+													'Tags:',
+													count( $ptlwidget_post_tags ),
+													'PTLWidget'
+												)
+											)
+										);
+										?>
+										</dt>
+										<dd class="ptl__description">
+											<?php the_tags( '', ', ' ); ?>
+										</dd>
+									</div>
+									<?php
+								}
+								if ( $ptlwidget_author ) {
+									?>
+									<div class="ptl__group ptl__author">
+										<dt class="ptl__term">
+											<?php esc_html_e( 'Author:', 'PTLWidget' ); ?>
+										</dt>
+										<dd class="ptl__description">
+											<?php the_author_posts_link(); ?>
+										</dd>
+									</div>
+									<?php
+								}
+								if ( $ptlwidget_publication_date ) {
+									?>
+									<div class="ptl__group ptl__publication-date">
+										<dt class="ptl__term">
+											<?php esc_html_e( 'Published on', 'PTLWidget' ); ?>
+										</dt>
+										<dd class="ptl__description">
+											<?php echo get_the_date(); ?>
+										</dd>
+									</div>
+									<?php
+								}
+								if ( $ptlwidget_update_date ) {
+									?>
+									<div class="ptl__group ptl__update-date">
+										<dt class="ptl__term">
+											<?php esc_html_e( 'Updated on', 'PTLWidget' ); ?>
+										</dt>
+										<dd class="ptl__description">
+											<?php the_modified_date(); ?>
+										</dd>
+									</div>
+									<?php
+								}
+								if ( $ptlwidget_comments_number && comments_open() ) {
+									?>
+									<div class="ptl__group ptl__comments">
+										<dt class="ptl__term">
+											<?php esc_html_e( 'Comments:', 'PTLWidget' ); ?>
+										</dt>
+										<dd class="ptl__description">
+											<?php comments_popup_link(); ?>
+										</dd>
+									</div>
+									<?php
+								}
+								?>
+							</dl>
+						</footer>
+						<?php
+					}
+					if ( $ptlwidget_excerpt ) {
+						?>
+						<div class="ptl__excerpt">
+							<?php
+							$ptlwidget_content = wp_strip_all_tags( get_the_excerpt(), true );
+							echo esc_html( $ptlwidget_content );
+							?>
+						</div>
+					<?php } ?>
 				</article>
 			</li>
 			<?php

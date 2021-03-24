@@ -1,0 +1,182 @@
+# Copyright (C) 2021 PTL-Widget
+# This file is distributed under the same license as the PTL-Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: PTL-Widget\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Armand Philippot <contact@armandphilippot.com>\n"
+"Last-Translator: Armand Philippot <contact@armandphilippot.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/armandphilippot/post-types-list-widget/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language: fr_FR\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: class-ptl-widget.php:60
+msgid "Display a list of posts by post types with custom options."
+msgstr "Affiche une liste d'articles par type avec des options personnalisables."
+
+#: class-ptl-widget.php:65
+msgid "Post Types List"
+msgstr "Liste d'articles par type"
+
+#: admin/partials/ptl-widget-admin-display.php:39
+msgid "Title:"
+msgstr "Titre :"
+
+#: admin/partials/ptl-widget-admin-display.php:53
+msgid "Ignore sticky posts"
+msgstr "Ignorer les articles épinglés (sticky posts)"
+
+#: admin/partials/ptl-widget-admin-display.php:57
+msgid "Choose post types:"
+msgstr "Choisir les types d'article :"
+
+#: admin/partials/ptl-widget-admin-display.php:80
+msgid "How many posts do you want to display:"
+msgstr "Combien d'articles voulez-vous afficher :"
+
+#: admin/partials/ptl-widget-admin-display.php:84
+msgid "Display all posts"
+msgstr "Afficher tous les articles"
+
+#: admin/partials/ptl-widget-admin-display.php:88
+msgid "Fix a limit"
+msgstr "Définir une limite"
+
+#: admin/partials/ptl-widget-admin-display.php:91
+msgid "Number of posts to display:"
+msgstr "Nombre d'articles à afficher :"
+
+#: admin/partials/ptl-widget-admin-display.php:100
+msgid "Choose a sorting method:"
+msgstr "Choisir une méthode de tri :"
+
+#: admin/partials/ptl-widget-admin-display.php:103,
+#: admin/partials/ptl-widget-admin-display.php:139
+msgid "Order by:"
+msgstr "Trier par :"
+
+#: admin/partials/ptl-widget-admin-display.php:106,
+#: admin/partials/ptl-widget-admin-display.php:142,
+#: admin/partials/ptl-widget-admin-display.php:199
+msgid "Publication date"
+msgstr "Date de publication"
+
+#: admin/partials/ptl-widget-admin-display.php:107,
+#: admin/partials/ptl-widget-admin-display.php:143,
+#: admin/partials/ptl-widget-admin-display.php:209
+msgid "Update date"
+msgstr "Date de mise à jour"
+
+#: admin/partials/ptl-widget-admin-display.php:108,
+#: admin/partials/ptl-widget-admin-display.php:144
+msgid "Title"
+msgstr "Titre"
+
+#: admin/partials/ptl-widget-admin-display.php:109,
+#: admin/partials/ptl-widget-admin-display.php:145,
+#: admin/partials/ptl-widget-admin-display.php:189
+msgid "Author"
+msgstr "Auteur"
+
+#: admin/partials/ptl-widget-admin-display.php:110,
+#: admin/partials/ptl-widget-admin-display.php:146
+msgid "Comment count"
+msgstr "Nombre de commentaires"
+
+#: admin/partials/ptl-widget-admin-display.php:111,
+#: admin/partials/ptl-widget-admin-display.php:147
+msgid "Post type"
+msgstr "Type d'article"
+
+#: admin/partials/ptl-widget-admin-display.php:112
+msgid "Random"
+msgstr "Aléatoire"
+
+#: admin/partials/ptl-widget-admin-display.php:115,
+#: admin/partials/ptl-widget-admin-display.php:150
+msgid "Order:"
+msgstr "Ordre :"
+
+#: admin/partials/ptl-widget-admin-display.php:118,
+#: admin/partials/ptl-widget-admin-display.php:153
+msgid "Descending"
+msgstr "Descendant"
+
+#: admin/partials/ptl-widget-admin-display.php:119,
+#: admin/partials/ptl-widget-admin-display.php:154
+msgid "Ascending"
+msgstr "Ascendant"
+
+#: admin/partials/ptl-widget-admin-display.php:123
+msgid "If you choose \"Random\", the order option has probably no effect and the second sorting method will not be applied."
+msgstr "Si vous choisissez \"Aléatoire\", l'option Ordre n'a probablement aucun effet et la deuxième méthode de tri ne sera pas appliquée."
+
+#: admin/partials/ptl-widget-admin-display.php:127
+msgid "Do you want a complementary sorting method?"
+msgstr "Souhaitez-vous une méthode de tri complémentaire ?"
+
+#: admin/partials/ptl-widget-admin-display.php:131
+msgid "No"
+msgstr "Non"
+
+#: admin/partials/ptl-widget-admin-display.php:135
+msgid "Yes"
+msgstr "Oui"
+
+#: admin/partials/ptl-widget-admin-display.php:160
+msgid "Choose the information to display:"
+msgstr "Choisir les informations à afficher :"
+
+#: admin/partials/ptl-widget-admin-display.php:169
+msgid "Categories"
+msgstr "Catégories"
+
+#: admin/partials/ptl-widget-admin-display.php:179
+msgid "Tags"
+msgstr "Étiquettes"
+
+#: admin/partials/ptl-widget-admin-display.php:219
+msgid "Comments number"
+msgstr "Nombre de commentaires"
+
+#: admin/partials/ptl-widget-admin-display.php:229
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: public/partials/ptl-widget-public-display.php:110
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] "Catégorie :"
+msgstr[1] "Catégories :"
+
+#: public/partials/ptl-widget-public-display.php:134
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] "Étiquette :"
+msgstr[1] "Étiquettes :"
+
+#: public/partials/ptl-widget-public-display.php:154
+msgid "Author:"
+msgstr "Auteur :"
+
+#: public/partials/ptl-widget-public-display.php:166
+msgid "Published on"
+msgstr "Publié le"
+
+#: public/partials/ptl-widget-public-display.php:178
+msgid "Updated on"
+msgstr "Mis à jour le"
+
+#: public/partials/ptl-widget-public-display.php:190
+msgid "Comments:"
+msgstr "Commentaires :"

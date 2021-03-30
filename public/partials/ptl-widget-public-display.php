@@ -65,7 +65,6 @@ if ( 'activated' === $ptlwidget_complementary_sorting ) {
 	$ptlwidget_posts_order_by_array           += array( $ptlwidget_posts_orderby_complementary_arg => $ptlwidget_posts_order_complementary );
 }
 
-$ptlwidget_query_args += array( 'order' => $ptlwidget_posts_order_array );
 $ptlwidget_query_args += array( 'orderby' => $ptlwidget_posts_order_by_array );
 
 if ( 'limited' === $ptlwidget_posts_limit && is_int( $ptlwidget_posts_number ) ) {

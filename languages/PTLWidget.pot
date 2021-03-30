@@ -136,30 +136,30 @@ msgstr ""
 msgid "Excerpt"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:110
+#: public/partials/ptl-widget-public-display.php:109
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: public/partials/ptl-widget-public-display.php:134
+#: public/partials/ptl-widget-public-display.php:133
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: public/partials/ptl-widget-public-display.php:154
+#: public/partials/ptl-widget-public-display.php:153
 msgid "Author:"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:166
+#: public/partials/ptl-widget-public-display.php:165
 msgid "Published on"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:178
+#: public/partials/ptl-widget-public-display.php:177
 msgid "Updated on"
 msgstr ""
 
-#: public/partials/ptl-widget-public-display.php:190
+#: public/partials/ptl-widget-public-display.php:189
 msgid "Comments:"
 msgstr ""

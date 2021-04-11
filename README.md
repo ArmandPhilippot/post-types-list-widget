@@ -27,13 +27,15 @@ You can use Composer to install this plugin as a dependency if you use custom in
 ```
 {
 "require": {
-    "armandphilippot/post-types-list-widget": "dev-master"
+    "armandphilippot/post-types-list-widget": "dev-main"
 }
 "repositories": [{
     "type": "git",
     "url": "git@github.com:ArmandPhilippot/post-types-list-widget.git"
 }]
 ```
+
+It is also possible to specify a version by replacing `dev-main` with `dev-main#v1.0.0` (an existent tag).
 
 ### Manual installation
 

@@ -66,7 +66,7 @@ $ptlwidget_post_types_list              = get_post_types( array( 'public' => tru
 					class="checkbox"
 					id="<?php echo esc_attr( $this->get_field_id( 'post_types' ) . '-' . $ptlwidget_post_type_name ); ?>"
 					name="<?php echo esc_attr( $this->get_field_name( 'post_types' ) . '[' . $ptlwidget_post_type_name . ']' ); ?>"
-					<?php checked( $ptlwidget_post_types[ $ptlwidget_post_type_name ] ); ?>
+					<?php array_key_exists( $ptlwidget_post_type_name, $ptlwidget_post_types ) ? checked( $ptlwidget_post_types[ $ptlwidget_post_type_name ] ) : null; ?>
 				/>
 				<?php echo esc_html( $ptlwidget_post_type_name ); ?>
 			</label>

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/armandphilippot/post-types-list-widget/compare/v1.0.2...v1.0.3) (2021-04-27)
+
+
+### Bug Fixes
+
+* replace article tag with div tag to display posts ([ad1c353](https://github.com/armandphilippot/post-types-list-widget/commit/ad1c353026dfd9c50c8cc5134072e42d0b94842b))
+* use checked only if array key exists ([b30cd13](https://github.com/armandphilippot/post-types-list-widget/commit/b30cd13af1f51db814ccca65c1da76dc8f6e61bd))
+
+
+### Docs
+
+* fix Composer install ([7512e62](https://github.com/armandphilippot/post-types-list-widget/commit/7512e62f170e8aa11cefdcdeaeb3fe9be6887a5b))
+
 ### [1.0.2](https://github.com/armandphilippot/post-types-list-widget/compare/v1.0.1...v1.0.2) (2021-04-10)
 
 
